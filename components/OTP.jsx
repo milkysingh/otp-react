@@ -34,17 +34,12 @@ const OTP = ({
   const changeCodeAtFocus = useCallback(
     (str) => {
       const updatedOTPValues = [...values];
-      if (currentInput === length - 1) {
-        updatedOTPValues[currentInput] =
-          str !== "" ? String(Number(str) % 10) : "";
-      } else {
-        updatedOTPValues[currentInput] =
-          str !== "" ? String(Number(str) % 10) : "";
-      }
+      updatedOTPValues[currentInput] =
+        str !== "" ? String(Number(str) % 10) : "";
       setValues(updatedOTPValues);
       handleOtpChange(updatedOTPValues);
     },
-    [currentInput, values, handleOtpChange, length]
+    [currentInput, values, handleOtpChange]
   );
 
   const previousFocusHandler = useCallback(() => {
