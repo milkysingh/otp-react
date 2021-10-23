@@ -136,7 +136,7 @@ const OTP = ({
             }
           }
         });
-        values(updatedOTPValues);
+        setValues(updatedOTPValues);
         setCurrentInput(Math.min(nextFocusIndex + 1, length - 1));
       }
     },
