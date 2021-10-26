@@ -101,15 +101,10 @@ var OTP = function OTP(_ref) {
   var changeCodeAtFocus = React.useCallback(function (str) {
     var updatedOTPValues = _toConsumableArray__default["default"](values);
 
-    if (currentInput === length - 1) {
-      updatedOTPValues[currentInput] = str !== "" ? String(Number(str) % 10) : "";
-    } else {
-      updatedOTPValues[currentInput] = str !== "" ? String(Number(str) % 10) : "";
-    }
-
+    updatedOTPValues[currentInput] = str !== "" ? String(Number(str) % 10) : "";
     setValues(updatedOTPValues);
     handleOtpChange(updatedOTPValues);
-  }, [currentInput, values, handleOtpChange, length]);
+  }, [currentInput, values, handleOtpChange]);
   var previousFocusHandler = React.useCallback(function () {
     onFocusHandler(currentInput - 1);
   }, [currentInput, onFocusHandler]);
@@ -197,7 +192,7 @@ var OTP = function OTP(_ref) {
           }
         }
       });
-      values(updatedOTPValues);
+      setValues(updatedOTPValues);
       setCurrentInput(Math.min(nextFocusIndex + 1, length - 1));
     }
   }, [currentInput, length, values]);

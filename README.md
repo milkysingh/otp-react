@@ -8,13 +8,11 @@ Install using `npm install malkeet-otp-react_2`
 
 ### Usage
 
-In a React app, use the Button or Badge components:  
 `import {OTP} from 'malkeet-otp-react_2'`
 
 #### Basic usage:
 
 ```jsx
-import "./App.css";
 import { OTP } from "malkeet-otp-react_2";
 function App() {
   const onOTPChangeHandler = (otp) => {
